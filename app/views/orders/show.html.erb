@@ -1,13 +1,32 @@
 <section class="orders-show">
-
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
   </header>
+<table class="table table-bordered">
+<thead>
+  <th>Product</th>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Quantity</th>
+  <th>Item Price</th>
+  <th>Total Price</th>
+</thead>
+  <% @order.line_items.each do |item| %>
+    <%= render 'order', product: item.product, quantity: item[:quantity].to_i, total_price: item.total_price%>
+  <% end %>
+    <tfoot>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td><%= @order.total_cents.to_f / 100 %></td>
+</tfoot>
+</table>
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+    <h5><%= @order.email %></h5>
   </div>
-
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
 </section>

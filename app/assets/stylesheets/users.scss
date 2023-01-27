@@ -1,0 +1,27 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.login {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  padding-bottom: 20px;
+  margin-top: 50px;
+  background-color:rgb(136, 152, 109);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-form-button {
+  margin-top: 12px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
